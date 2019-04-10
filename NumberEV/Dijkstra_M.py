@@ -137,24 +137,24 @@ def dijkstra_m(graph, f, t, wait_time, d_t, car_info):
     # #print dis
     return (dis, x)
 
-# def dijkstra_m(graph, f, t, wait_time, d_t, car_info):
-#     p = dijkstra(graph, f, t, wait_time, d_t, car_info)
-#     # print p
-#     a = []
-#     while p:
-#         a.append(p[0])
-#         p = p[1]
-#     a = a[1:]
-#     a.reverse()
-#     # print a
-#
-#     # a.remove(a[-1])
-#     # print a
-#     dis = 0
-#     for x in range(len(a) - 1):
-#         for v2, c in graph.get(a[x], ()):
-#             # print v2
-#             if v2 == a[x + 1]:
-#                 dis += c
-#     # print dis
-#     return (dis, a)
+def dijkstra_m(graph, f, t, wait_time, d_t, car_info):
+    p = dijkstra(graph, f, t, wait_time, d_t, car_info)
+    # print p
+    a = []
+    while p:
+        a.append(p[0])
+        p = p[1]
+    a = a[1:]
+    a.reverse()
+    # print a
+
+    # a.remove(a[-1])
+    # print a
+    dis = 0
+    for x in range(len(a) - 1):
+        for v2, c in graph.get(a[x], ()):
+            # print v2
+            if v2 == a[x + 1]:
+                dis += c
+    # print dis
+    return (dis, a)

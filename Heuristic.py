@@ -1,3 +1,5 @@
+import random
+
 from NumberEV.EVRequired import electric_vehicle_required
 from NumberEV.Dijkstra_M import dijkstra_m
 from NumberEV.CarConfiguration import CarConfiguration
@@ -55,6 +57,10 @@ for ik in range(len(g)):
     for i in range(500):
         x = (0, 0)
         waiting_time.append(x)
+    random.seed(100)
+    make_inf = random.sample(range(500), 150)
+    for i in make_inf:
+        waiting_time[i] = (0, 9999)
     waiting_time_copy = list(waiting_time)
     kl = 0
     for key, value in demand[ik].items():
